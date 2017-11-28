@@ -1,0 +1,14 @@
+<h1>User Signup</h1>
+<% flash.each do |_, msg| %>
+    <%= content_tag :div, msg %>
+<% end %>
+
+<%= form_with model: @user do |form| %>
+    <div>
+      <%= form.text_field :email, placeholder: 'Email' %>
+      <%= form.password_field :password, placeholder: 'Password' %>
+      <%= form.password_field :password_confirmation, placeholder: 'Password Confirm' %>
+    </div>
+
+    <%= form.submit 'Signup' %>
+<% end %>
